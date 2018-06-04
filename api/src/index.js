@@ -43,7 +43,7 @@ const schema = makeExecutableSchema({
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:3000/gql_db');
+mongoose.connect('mongodb://localhost:27017/Graphql');
 
 app.use(cors());
 app.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));

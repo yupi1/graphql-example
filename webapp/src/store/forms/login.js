@@ -10,7 +10,7 @@ class LoginForm {
     }
 
     @action
-    passwrodAdd = (password) => {
+    passwordAdd = (password) => {
         this.password = password;
     }
 }

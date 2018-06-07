@@ -20,6 +20,8 @@ module.exports = {
 		"curly": [2],
 		"no-console": [0],
 		"no-undef": [0],
+		"eol-last": [0],
+		"linebreak-style": [0],
 		"object-curly-spacing": [2, "always"],
 		"array-bracket-spacing": [
 			2,

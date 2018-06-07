@@ -2,39 +2,13 @@ import mongoose from 'mongoose';
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import fs from 'fs';
+import path from 'path';
 import { graphiqlExpress, graphqlExpress } from 'apollo-server-express';
 import { makeExecutableSchema } from 'graphql-tools';
+import resolvers from './resolvers/index';
 
-const books = [
-  {
-    id: 1,
-    title: 'Harry Potter and the Sorcerer\'s stone',
-    author: 'J.K. Rowling',
-  },
-  {
-    id: 2,
-    title: 'Jurassic Park',
-    author: 'Michael Crichton',
-  },
-];
-
-const typeDefs = `
-  type Query { 
-      books(id: Int): [Book] 
-    }
-  type Book { id: Int!, title: String, author: String }
-`;
-
-const resolvers = {
-  Query: {
-    books(_, { id }) {
-      if (typeof id === 'number') {
-        return books.filter(item => item.id === id);
-      }
-      return books;
-    },
-  },
-};
+const typeDefs = [ fs.readFileSync(path.join(__dirname, 'schema.graphql'), 'utf8') ];
 
 const schema = makeExecutableSchema({
   typeDefs,

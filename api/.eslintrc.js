@@ -1,5 +1,8 @@
 module.exports = {
-    "extends": "airbnb-base",
+    "extends": [
+		"airbnb-base",
+		"prettier",
+	],
     "parser": "babel-eslint",
     "env": {
         "browser": true,
@@ -14,14 +17,16 @@ module.exports = {
 		}
 	},
     "rules": {
-        "camelcase": [2],
+        "camelcase": 2,
 		"quotes": [2, "single"],
-		"semi": [2],
-		"curly": [2],
-		"no-console": [0],
-		"no-undef": [0],
-		"eol-last": [0],
-		"linebreak-style": [0],
+		"semi": 2,
+		"curly": 2,
+		"no-console": 0,
+		"no-undef": 0,
+		"eol-last": 0,
+		"linebreak-style": 0,
+		"func-names": 0,
+		"consistent-return": 0,
 		"object-curly-spacing": [2, "always"],
 		"array-bracket-spacing": [
 			2,
@@ -32,8 +37,16 @@ module.exports = {
 			}
 		],
 		"block-spacing": [2, "always"],
-    },
+		"prettier/prettier": [
+			"error",
+			{
+			  "trailingComma": "es5",
+			  "singleQuote": true,
+			}
+		],
+	},
     "plugins": [
-        "import"
+		"import",
+		"prettier",
     ]
 };

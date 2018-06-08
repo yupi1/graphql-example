@@ -8,7 +8,9 @@ import { graphiqlExpress, graphqlExpress } from 'apollo-server-express';
 import { makeExecutableSchema } from 'graphql-tools';
 import resolvers from './resolvers/index';
 
-const typeDefs = [ fs.readFileSync(path.join(__dirname, 'schema.graphql'), 'utf8') ];
+const typeDefs = [
+  fs.readFileSync(path.join(__dirname, 'schema.graphql'), 'utf8'),
+];
 
 const schema = makeExecutableSchema({
   typeDefs,

@@ -1,5 +1,10 @@
+type Error {
+    title: String!
+    message: String!
+}
+
 type User {
-    id: Int!
+    id: String!
     username: String!
     email: String!
     password: String!
@@ -10,5 +15,5 @@ type Query {
 }
 
 type Mutation {
-    signup(username: String!, email: String, password: String!): User
+    signup(username: String!, email: String!, password: String!): [Error!]
 }

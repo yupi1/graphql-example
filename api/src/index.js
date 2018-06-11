@@ -8,6 +8,8 @@ import { graphiqlExpress, graphqlExpress } from 'apollo-server-express';
 import { makeExecutableSchema } from 'graphql-tools';
 import resolvers from './resolvers/index';
 
+require('dotenv').config();
+
 const typeDefs = [
   fs.readFileSync(path.join(__dirname, 'schema.graphql'), 'utf8'),
 ];
